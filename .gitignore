@@ -1,0 +1,17 @@
+# CLion / JetBrains
+.idea/
+cmake-build-*/
+
+# Сборка CMake
+build/
+bin/
+
+# Бинарники и объектные файлы
+*.o
+*.a
+*.so
+doodle_jump
+
+# Временные файлы
+*.log
+*.tmp
