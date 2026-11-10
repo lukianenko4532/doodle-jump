@@ -18,10 +18,10 @@ int main() {
                 running = false;
             } else if (ch == 'a' || ch == 'A') {
                 // to the left
-                std::cout << "\r" << std::flush;
+                std::cout << "*\r" << std::flush;
             } else if (ch == 'd' || ch == 'D') {
                 // to the right
-                std::cout << "\r" << std::flush;
+                std::cout << "**\r" << std::flush;
             }
         } else if (bytesRead == 0){
             // doing nothing, cykle goes further
