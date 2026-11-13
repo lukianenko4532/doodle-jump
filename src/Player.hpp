@@ -22,6 +22,7 @@ public:
     void jump();
 
     double get_x() const { return x; }
+    void set_x(double new_x) { x = new_x; }
     double get_y() const { return y; }
     double get_speed_x() const { return speed_x; }
     double get_speed_y() const { return speed_y; }

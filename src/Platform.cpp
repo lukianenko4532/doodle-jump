@@ -4,8 +4,6 @@
 
 #include "Platform.hpp"
 
-#include <string>
-
 Platform::Platform(double start_x, double start_y, PlatformType type)
     : x(start_x), y(start_y), type(type) {
 
@@ -38,7 +36,7 @@ bool Platform::contains(double px, double py) const {
     if (broken) {
         return false;
     }
-    return (px >= x && px <= x + WIDTH && py >= y && py <= y + 0.4);
+    return (px >= x && px <= x + WIDTH && py <= y + 0.3 && py >= y - 1.0);
 }
 
 void Platform::shift_y(double dy) {
