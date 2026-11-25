@@ -8,7 +8,7 @@ Platform::Platform(double start_x, double start_y, PlatformType type)
     : x(start_x), y(start_y), type(type) {
 
     if (type == PlatformType::StandardMoving || type == PlatformType::FragileMoving) {
-        speed_x = 0.4;
+        speed_x = 0.15;
     } else {
         speed_x = 0.0;
     }

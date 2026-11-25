@@ -17,6 +17,7 @@ private:
     bool game_over{false};
     int width{0}, height{0};
     int score{0};
+    double exact_score{0.0};
 
     void generate_platforms_above();
 

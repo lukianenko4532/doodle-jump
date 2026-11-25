@@ -19,7 +19,7 @@ private:
     bool broken = false;
     PlatformType type;
 
-    static constexpr int WIDTH = 5;
+    static constexpr int WIDTH = 7;
 
 public:
     Platform(double start_x, double start_y, PlatformType type = PlatformType::StandardStatic);

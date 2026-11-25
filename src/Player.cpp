@@ -6,30 +6,34 @@
 
 #include <algorithm>
 
-constexpr double GRAVITY = 0.1;
-constexpr double JUMP_FORCE = 1.2;
+constexpr double GRAVITY = 0.01;
+constexpr double JUMP_FORCE = 0.4;
 
 Player::Player(double start_x, double start_y)
-    : x(start_x), y(start_y), speed_x(1.5), speed_y(0.0) {
+    : x(start_x), y(start_y), speed_x(0.0), speed_y(0.0) {
     jump();
 }
-
 void Player::jump() {
     speed_y = JUMP_FORCE;
 }
 
 void Player::update() {
+    x += speed_x;
+    speed_x *= 0.87;
+    if (std::abs(speed_x) < 0.05) {
+        speed_x = 0;
+    }
     y = y + speed_y;
     speed_y = speed_y - GRAVITY;
     speed_y = std::max(speed_y, -1.5);
 }
 
 void Player::moveLeft() {
-    x -= speed_x;
+    speed_x = -0.7;
 }
 
 void Player::moveRight() {
-    x += speed_x;
+    speed_x = 0.7;
 }
 
 void Player::shift_y(double dy) {

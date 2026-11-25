@@ -90,11 +90,8 @@ void Board::update() {
 
     if (player.get_y() > height / 2.0) {
         double dy = player.get_y() - (height / 2.0);
-        player.shift_y(dy);
-        for (auto& platform : platforms) {
-            platform.shift_y(dy);
-        }
-        score += static_cast<int>(dy);
+        exact_score += dy;
+        score = static_cast<int>(exact_score);
     }
 
     platforms.erase(
