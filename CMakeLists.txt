@@ -8,22 +8,28 @@ add_compile_options(-Wall -Wextra -pedantic)
 
 find_package(Threads REQUIRED)
 
-set(SOURCES
+set(GAME_SOURCES
         src/main.cpp
-        src/TerminalManager.cpp
-        src/TerminalManager.hpp
-        src/Player.cpp
-        src/Player.hpp
-        src/Platform.cpp
-        src/Platform.hpp
-        src/Board.cpp
-        src/Board.hpp
         src/GameEngine.cpp
-        src/GameEngine.hpp
+        src/Player.cpp
+        src/Platform.cpp
+        src/Board.cpp
         src/ArgParser.cpp
-        src/ArgParser.hpp
+        src/TerminalManager.cpp
+)
+add_executable(doodle_jump ${GAME_SOURCES})
+target_link_libraries(doodle_jump PRIVATE Threads::Threads)
+
+set(TEST_SOURCES
+        tests/test_main.cpp
+        tests/test_logic.cpp
+        src/Player.cpp
+        src/Platform.cpp
+        src/Board.cpp
+        src/ArgParser.cpp
+        src/TerminalManager.cpp
 )
 
-add_executable(doodle_jump ${SOURCES})
+add_executable(doodle_jump_tests ${TEST_SOURCES})
 
-target_link_libraries(doodle_jump PRIVATE Threads::Threads)
+target_link_libraries(doodle_jump_tests PRIVATE Threads::Threads)

@@ -90,6 +90,16 @@ void Board::update() {
 
     if (player.get_y() > height / 2.0) {
         double dy = player.get_y() - (height / 2.0);
+
+        // 1. Сдвигаем игрока вниз
+        player.shift_y(dy);
+
+        // 2. Сдвигаем все платформы вниз
+        for (auto& platform : platforms) {
+            platform.shift_y(dy);
+        }
+
+        // 3. Начисляем очки
         exact_score += dy;
         score = static_cast<int>(exact_score);
     }
